@@ -1,0 +1,132 @@
+{
+    "info": {
+        "name": "Car and Review API",
+        "description": "Collection for Car and Review endpoints created with Symfony and API Platform.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "List Cars",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/api/cars"
+            }
+        },
+        {
+            "name": "Create a Car",
+            "request": {
+                "method": "POST",
+                "url": "{{baseUrl}}/api/cars",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"brand\": \"Toyota\", \"model\": \"Corolla\", \"color\": \"Red\"}"
+                }
+            }
+        },
+        {
+            "name": "Get a Specific Car",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/api/cars/{carId}"
+            }
+        },
+        {
+            "name": "Update a Car",
+            "request": {
+                "method": "PUT",
+                "url": "{{baseUrl}}/api/cars/{carId}",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"brand\": \"Honda\", \"model\": \"Civic\", \"color\": \"Blue\"}"
+                }
+            }
+        },
+        {
+            "name": "Delete a Car",
+            "request": {
+                "method": "DELETE",
+                "url": "{{baseUrl}}/api/cars/{carId}"
+            }
+        },
+        {
+            "name": "List Reviews",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/api/reviews"
+            }
+        },
+        {
+            "name": "Create a Review",
+            "request": {
+                "method": "POST",
+                "url": "{{baseUrl}}/api/reviews",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"starRating\": 8, \"reviewText\": \"Great car!\", \"car\": \"/api/cars/{carId}\"}"
+                }
+            }
+        },
+        {
+            "name": "Get a Specific Review",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/api/reviews/{reviewId}"
+            }
+        },
+        {
+            "name": "Update a Review",
+            "request": {
+                "method": "PUT",
+                "url": "{{baseUrl}}/api/reviews/{reviewId}",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"starRating\": 9, \"reviewText\": \"Updated review text.\"}"
+                }
+            }
+        },
+        {
+            "name": "Delete a Review",
+            "request": {
+                "method": "DELETE",
+                "url": "{{baseUrl}}/api/reviews/{reviewId}"
+            }
+        },
+        {
+            "name": "Get Reviews for a Specific Car",
+            "request": {
+                "method": "GET",
+                "url": "{{baseUrl}}/api/cars/{carId}/reviews"
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:8000"
+        }
+    ]
+}
